@@ -19,9 +19,6 @@ To interact with Quasar, simply start the chatbot and ask any space-related ques
 ## Contributing
 Contributions to Quasar are welcome! Please refer to our contributing guidelines for how to propose improvements or report issues.
 
-## License
-Quasar is licensed under [license name], which allows for open and collaborative development.
-
 ## Contact
 For more information, questions, or feedback, please contact [your contact information].
 
