@@ -10,19 +10,6 @@ Quasar is an interactive, intelligent chatbot designed to answer a wide range of
 - **Multimedia Support**: Enhances learning with images, videos, and articles related to space.
 - **User Query History**: Remembers past interactions for a personalized experience.
 
-## Installation
-To get started with Quasar, follow these steps:
-
-### Prerequisites
-- An active internet connection.
-- Access to OpenAI's API (API key required).
-
-### Setup
-1. Clone the Quasar repository from GitHub.
-2. Install the necessary dependencies listed in `requirements.txt`.
-3. Set up your OpenAI API key in the configuration file.
-4. Run the chatbot server using the provided instructions.
-
 ## Usage
 To interact with Quasar, simply start the chatbot and ask any space-related question. Examples:
 - "What is a black hole?"
