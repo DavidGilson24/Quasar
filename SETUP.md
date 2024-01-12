@@ -40,3 +40,5 @@ Download the Python OpenAI library (DO THIS ONCE V.ENV IS ON):
 Run this code:
 `setx OPENAI_API_KEY "your-api-key-here"`
 
+If this didn't work, implement the API key as an environnment variable.
+
