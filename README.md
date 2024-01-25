@@ -23,4 +23,4 @@ Contributions to Quasar are welcome! Please refer to our contributing guidelines
 For more information, questions, or feedback, please contact [your contact information].
 
 ## Acknowledgements
-Special thanks to the OpenAI team, space research organizations, and all the contributors who have made Quasar a valuable educational tool for space enthusiasts.
+Special thanks to the OpenAI team, space research organizations, and all the contributors who have made Quasar a valuable educational tool for space enthusiasts. testtet
