@@ -14,7 +14,7 @@ Quasar is an interactive, intelligent chatbot designed to answer a wide range of
 To interact with Quasar, simply start the chatbot and ask any space-related question. Examples:
 - "What is a black hole?"
 - "Can you explain the Big Bang theory?"
-- "Tell me about the latest space missions."
+- "Tell me about important space missions."
 
 ## Contributing
 Contributions to Quasar are welcome! Please refer to our contributing guidelines for how to propose improvements or report issues.
