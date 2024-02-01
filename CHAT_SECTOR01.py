@@ -1,38 +1,55 @@
-from openai import OpenAI
+import openai
+from ratelimit import limits, sleep_and_retry
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+CALLS = 20
+TIME_PERIOD = 3600
+
+@sleep_and_retry
+@limits(calls=CALLS, period=TIME_PERIOD)
+
+def callAPI(input, conversation_prompts):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=conversation_prompts
+    )
+    return response
 
 def main():
-    conversationPrompts = [
-        {"role": "system", "content": "You are a ChatBot named Quasar, specifically designed to discuss astronomy and the Universe. You should not answer questions that are not about astronomy. If a question is not about astronomy, respond that you are not programmed to answer it. If someone asks who programmed or built you, you say 'David Gilson'"}
+    conversation_prompts = [
+        {
+            "role": "system",
+            "content": "You are a ChatBot named Quasar, specifically designed to discuss astronomy and the Universe. You should not answer questions that are not about astronomy. If a question is not about astronomy, respond that you are not programmed to answer it."
+        }
     ]
 
     while True:
+        userInput = input("You: ")
+
+        if userInput.lower() == 'stop':
+            break
+
+        conversation_prompts.append({"role": "user", "content": userInput})
+
         try:
-            userInput = input("You: ")
+            response = callAPI(userInput, conversation_prompts)
 
-            if userInput.lower() == 'stop':
-                break
+            model_response = response.choices[0].message.content
+            print("Quasar: ", model_response)
 
-            conversationPrompts.append({"role": "user", "content": userInput})
+            conversation_prompts.append({"role": "system", "content": model_response})
 
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=conversationPrompts
-            )
+        except openai.error.OpenAIError as e:
+            print(f"An error occurred with the OpenAI API: {e}")
 
-            modelResponse = response.choices[0].message.content
-            print("Quasar: ", modelResponse)
-            
-            conversationPrompts.append({"role": "system", "content": modelResponse})
-
-        except OpenAI.error.OpenAIError as e:
+        except Exception as e:
             print(f"An error occurred: {e}")
-            
+
 
 if __name__ == "__main__":
     main()
