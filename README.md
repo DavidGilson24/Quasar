@@ -20,7 +20,7 @@ To interact with Quasar, simply start the chatbot and ask any space-related ques
 Contributions to Quasar are welcome! Please refer to our contributing guidelines for how to propose improvements or report issues.
 
 ## Contact
-For more information, questions, or feedback, please contact [your contact information].
+For more information, questions, or feedback, please contact me via email: cs@david-gilson.com.
 
 ## Acknowledgements
 Special thanks to the OpenAI team, space research organizations, and all the contributors who have made Quasar a valuable educational tool for space enthusiasts.
